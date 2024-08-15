@@ -1,7 +1,9 @@
-from radius import process_frames, renumber_all_gro_files, calculate_defects
 import matplotlib.pyplot as plt
 import MDAnalysis as mda
 import os
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from defect.radius import PackingDefect2, PackingDefect2PMDA
 
 def plot_histogram(defects, label, color=None):
     h, _ = np.histogram(defects, bins=np.linspace(0, 150, 600))
